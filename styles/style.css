@@ -16,6 +16,9 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -54,6 +57,8 @@ ol {
 .result__video {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .search-form {
@@ -64,7 +69,8 @@ ol {
 
 .search-form__fieldset-title {
   color: #fff;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, "Best Font Ever", "Arial", "Helvetica",
+    sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -78,8 +84,10 @@ fieldset {
 
 .search-form__label {
   display: flex;
+  align-items: center;
   gap: 5px;
   width: fit-content;
+  position: relative;
 }
 
 .visually-hidden {
@@ -109,6 +117,7 @@ fieldset {
 }
 
 .search-form__textfield {
+  appearance: none;
   border-right: none;
   font-family: inherit;
   color: inherit;
@@ -137,7 +146,7 @@ fieldset {
   flex-direction: column;
   block-size: 100%;
   inline-size: 100%;
-  gap: 26px;
+  gap: 20px;
 }
 
 .content__list {
@@ -146,7 +155,7 @@ fieldset {
   overflow-x: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 32px;
 }
 
 .content__video-card {
@@ -156,7 +165,9 @@ fieldset {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
+  inline-size: 194px;
+  block-size: 103px;
+  object-fit: contain;
 }
 
 .content__video-card-description-container {
@@ -169,12 +180,7 @@ fieldset {
 
 .content__accent {
   color: #545050;
-  font-family: Oswald;
-  font-size: 75px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 94%;
-  text-transform: uppercase;
+  font-family: Oswald, "Best Font Ever", "Arial", "Helvetica", sans-serif;
 }
 
 .content__card-link {
@@ -182,7 +188,7 @@ fieldset {
   margin: 2px;
   text-decoration: none;
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, "Best Font Ever", "Arial", "Helvetica", sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -192,7 +198,7 @@ fieldset {
 
 .content__video-card-title {
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, "Best Font Ever", "Arial", "Helvetica", sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -202,34 +208,36 @@ fieldset {
 
 .content__video-card-description {
   color: #fff;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, "Best Font Ever", "Arial", "Helvetica",
+    sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16.2px;
+  line-height: 1;
   text-transform: none;
 }
 
 .title {
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, "Best Font Ever", "Arial", "Helvetica", sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
+  padding-top: 7px;
 }
 
-button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background-color: inherit;
   color: #fff;
   text-align: center;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, "Best Font Ever", "Arial", "Helvetica",
+    sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -265,6 +273,8 @@ button {
   + .search-form__pseudo-checkbox::before {
   content: "";
   position: absolute;
+  left: 2px;
+  top: 3.5px;
   width: 15px;
   height: 15px;
   background: #fff;
@@ -281,18 +291,17 @@ button {
   outline-offset: 1px;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button:active {
-  border: 1px solid #fff;
+.button:active {
   background: #545050;
 }
 
@@ -305,16 +314,16 @@ button:focus-visible {
   background: #545050;
 }
 
-.content__card-link_current:hover {
+.content__card-link:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
 
-.content__card-link_current:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__card-link_current:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
 }
